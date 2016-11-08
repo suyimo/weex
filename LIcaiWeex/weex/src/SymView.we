@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <text >{{symtitle}}</text>
+        <text>gggggggggggggggggggggggggggggg</text>
+    </div>
+
+</template>
+
+<script>
+module.exports = {
+    data:{
+        symtitle:'gggggggggggggggg',
+    }
+    ,methods:{
+        viewAppear:function () {
+            this.symtitle = 'symview';
+        },
+    }
+}
+</script>
+
+<style></style>

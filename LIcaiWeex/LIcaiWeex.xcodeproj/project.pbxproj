@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7057B740868045EB78592E60 /* libPods-LIcaiWeex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFA934AAC4440BA160CC351 /* libPods-LIcaiWeex.a */; };
+		E2C749C71DD05A3A00A7E60D /* js in Resources */ = {isa = PBXBuildFile; fileRef = E2C749C61DD05A3A00A7E60D /* js */; };
+		E2C749CA1DD05F6200A7E60D /* WXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C749C91DD05F6200A7E60D /* WXEventModule.m */; };
+		E2C749D81DD0CA6100A7E60D /* WXSelectComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C749D71DD0CA6100A7E60D /* WXSelectComponent.m */; };
+		E2C749DD1DD0D5A900A7E60D /* WXAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C749DC1DD0D5A900A7E60D /* WXAssert.m */; };
+		E2CC66631DCB728C006EF345 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CC66621DCB728C006EF345 /* main.m */; };
+		E2CC66661DCB728C006EF345 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CC66651DCB728C006EF345 /* AppDelegate.m */; };
+		E2CC66691DCB728C006EF345 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CC66681DCB728C006EF345 /* ViewController.m */; };
+		E2CC666C1DCB728C006EF345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CC666A1DCB728C006EF345 /* Main.storyboard */; };
+		E2CC666E1DCB728C006EF345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CC666D1DCB728C006EF345 /* Assets.xcassets */; };
+		E2CC66711DCB728C006EF345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CC666F1DCB728C006EF345 /* LaunchScreen.storyboard */; };
+		E2CC66921DCE23BC006EF345 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CC66911DCE23BC006EF345 /* ViewController2.m */; };
+		E2CC66951DCEC418006EF345 /* WXImageLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CC66941DCEC418006EF345 /* WXImageLoadManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1EFA934AAC4440BA160CC351 /* libPods-LIcaiWeex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LIcaiWeex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E86D6FEED4E2BA69004B6B7 /* Pods-LIcaiWeex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIcaiWeex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LIcaiWeex/Pods-LIcaiWeex.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9A489FBB8C5698C953C07A /* Pods-LIcaiWeex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LIcaiWeex.release.xcconfig"; path = "Pods/Target Support Files/Pods-LIcaiWeex/Pods-LIcaiWeex.release.xcconfig"; sourceTree = "<group>"; };
+		E2C749C61DD05A3A00A7E60D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = weex/js; sourceTree = SOURCE_ROOT; };
+		E2C749C81DD05F6200A7E60D /* WXEventModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEventModule.h; sourceTree = "<group>"; };
+		E2C749C91DD05F6200A7E60D /* WXEventModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEventModule.m; sourceTree = "<group>"; };
+		E2C749D21DD0C9BB00A7E60D /* WXComponent+Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXComponent+Events.h"; sourceTree = "<group>"; };
+		E2C749D61DD0CA6100A7E60D /* WXSelectComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSelectComponent.h; sourceTree = "<group>"; };
+		E2C749D71DD0CA6100A7E60D /* WXSelectComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSelectComponent.m; sourceTree = "<group>"; };
+		E2C749D91DD0D42B00A7E60D /* WXComponent_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXComponent_internal.h; sourceTree = "<group>"; };
+		E2C749DA1DD0D52700A7E60D /* WXScrollerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXScrollerProtocol.h; sourceTree = "<group>"; };
+		E2C749DB1DD0D5A900A7E60D /* WXAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAssert.h; sourceTree = "<group>"; };
+		E2C749DC1DD0D5A900A7E60D /* WXAssert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAssert.m; sourceTree = "<group>"; };
+		E2C749DE1DD0D5D200A7E60D /* WXDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXDefine.h; sourceTree = "<group>"; };
+		E2CC665E1DCB728C006EF345 /* LIcaiWeex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIcaiWeex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CC66621DCB728C006EF345 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2CC66641DCB728C006EF345 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E2CC66651DCB728C006EF345 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E2CC66671DCB728C006EF345 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E2CC66681DCB728C006EF345 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E2CC666B1DCB728C006EF345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2CC666D1DCB728C006EF345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2CC66701DCB728C006EF345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2CC66721DCB728C006EF345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CC66781DCB80FD006EF345 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		E2CC667A1DCB810B006EF345 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E2CC667C1DCB811A006EF345 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E2CC66901DCE23BC006EF345 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		E2CC66911DCE23BC006EF345 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		E2CC66931DCEC418006EF345 /* WXImageLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageLoadManager.h; sourceTree = "<group>"; };
+		E2CC66941DCEC418006EF345 /* WXImageLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageLoadManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2CC665B1DCB728C006EF345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7057B740868045EB78592E60 /* libPods-LIcaiWeex.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CE3CE6823B10D122A4DF568 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E86D6FEED4E2BA69004B6B7 /* Pods-LIcaiWeex.debug.xcconfig */,
+				AD9A489FBB8C5698C953C07A /* Pods-LIcaiWeex.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2C749D11DD0C9BB00A7E60D /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				E2C749D21DD0C9BB00A7E60D /* WXComponent+Events.h */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		E2C749D51DD0CA6100A7E60D /* component */ = {
+			isa = PBXGroup;
+			children = (
+				E2C749DE1DD0D5D200A7E60D /* WXDefine.h */,
+				E2C749DB1DD0D5A900A7E60D /* WXAssert.h */,
+				E2C749DC1DD0D5A900A7E60D /* WXAssert.m */,
+				E2C749DA1DD0D52700A7E60D /* WXScrollerProtocol.h */,
+				E2C749D91DD0D42B00A7E60D /* WXComponent_internal.h */,
+				E2C749D61DD0CA6100A7E60D /* WXSelectComponent.h */,
+				E2C749D71DD0CA6100A7E60D /* WXSelectComponent.m */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		E2CC66551DCB728C006EF345 = {
+			isa = PBXGroup;
+			children = (
+				E2CC66601DCB728C006EF345 /* LIcaiWeex */,
+				E2CC665F1DCB728C006EF345 /* Products */,
+				2CE3CE6823B10D122A4DF568 /* Pods */,
+				F8E4C08F608098700C5FA03F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E2CC665F1DCB728C006EF345 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC665E1DCB728C006EF345 /* LIcaiWeex.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2CC66601DCB728C006EF345 /* LIcaiWeex */ = {
+			isa = PBXGroup;
+			children = (
+				E2C749D51DD0CA6100A7E60D /* component */,
+				E2C749D11DD0C9BB00A7E60D /* Events */,
+				E2C749C61DD05A3A00A7E60D /* js */,
+				E2CC66641DCB728C006EF345 /* AppDelegate.h */,
+				E2CC66651DCB728C006EF345 /* AppDelegate.m */,
+				E2CC66901DCE23BC006EF345 /* ViewController2.h */,
+				E2CC66911DCE23BC006EF345 /* ViewController2.m */,
+				E2CC66671DCB728C006EF345 /* ViewController.h */,
+				E2CC66681DCB728C006EF345 /* ViewController.m */,
+				E2CC666A1DCB728C006EF345 /* Main.storyboard */,
+				E2CC666D1DCB728C006EF345 /* Assets.xcassets */,
+				E2CC666F1DCB728C006EF345 /* LaunchScreen.storyboard */,
+				E2CC66721DCB728C006EF345 /* Info.plist */,
+				E2CC66611DCB728C006EF345 /* Supporting Files */,
+				E2CC66931DCEC418006EF345 /* WXImageLoadManager.h */,
+				E2CC66941DCEC418006EF345 /* WXImageLoadManager.m */,
+				E2C749C81DD05F6200A7E60D /* WXEventModule.h */,
+				E2C749C91DD05F6200A7E60D /* WXEventModule.m */,
+			);
+			path = LIcaiWeex;
+			sourceTree = "<group>";
+		};
+		E2CC66611DCB728C006EF345 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC66621DCB728C006EF345 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8E4C08F608098700C5FA03F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC667C1DCB811A006EF345 /* CoreData.framework */,
+				E2CC667A1DCB810B006EF345 /* CFNetwork.framework */,
+				E2CC66781DCB80FD006EF345 /* libicucore.tbd */,
+				1EFA934AAC4440BA160CC351 /* libPods-LIcaiWeex.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2CC665D1DCB728C006EF345 /* LIcaiWeex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2CC66751DCB728C006EF345 /* Build configuration list for PBXNativeTarget "LIcaiWeex" */;
+			buildPhases = (
+				6C4A07C2A06BA569E51A3B6E /* [CP] Check Pods Manifest.lock */,
+				E2CC665A1DCB728C006EF345 /* Sources */,
+				E2CC665B1DCB728C006EF345 /* Frameworks */,
+				E2CC665C1DCB728C006EF345 /* Resources */,
+				CFA46B54AD82C7B59C57E8EE /* [CP] Embed Pods Frameworks */,
+				C75BF0B9C1E2951794BAB4DE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LIcaiWeex;
+			productName = LIcaiWeex;
+			productReference = E2CC665E1DCB728C006EF345 /* LIcaiWeex.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2CC66561DCB728C006EF345 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = sym;
+				TargetAttributes = {
+					E2CC665D1DCB728C006EF345 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = D59CVQF6QM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E2CC66591DCB728C006EF345 /* Build configuration list for PBXProject "LIcaiWeex" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2CC66551DCB728C006EF345;
+			productRefGroup = E2CC665F1DCB728C006EF345 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2CC665D1DCB728C006EF345 /* LIcaiWeex */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2CC665C1DCB728C006EF345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2CC66711DCB728C006EF345 /* LaunchScreen.storyboard in Resources */,
+				E2CC666E1DCB728C006EF345 /* Assets.xcassets in Resources */,
+				E2CC666C1DCB728C006EF345 /* Main.storyboard in Resources */,
+				E2C749C71DD05A3A00A7E60D /* js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C4A07C2A06BA569E51A3B6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C75BF0B9C1E2951794BAB4DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIcaiWeex/Pods-LIcaiWeex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA46B54AD82C7B59C57E8EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LIcaiWeex/Pods-LIcaiWeex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2CC665A1DCB728C006EF345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2CC66691DCB728C006EF345 /* ViewController.m in Sources */,
+				E2CC66921DCE23BC006EF345 /* ViewController2.m in Sources */,
+				E2CC66951DCEC418006EF345 /* WXImageLoadManager.m in Sources */,
+				E2C749DD1DD0D5A900A7E60D /* WXAssert.m in Sources */,
+				E2C749CA1DD05F6200A7E60D /* WXEventModule.m in Sources */,
+				E2CC66661DCB728C006EF345 /* AppDelegate.m in Sources */,
+				E2CC66631DCB728C006EF345 /* main.m in Sources */,
+				E2C749D81DD0CA6100A7E60D /* WXSelectComponent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E2CC666A1DCB728C006EF345 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2CC666B1DCB728C006EF345 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2CC666F1DCB728C006EF345 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2CC66701DCB728C006EF345 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2CC66731DCB728C006EF345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2CC66741DCB728C006EF345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2CC66761DCB728C006EF345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E86D6FEED4E2BA69004B6B7 /* Pods-LIcaiWeex.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D59CVQF6QM;
+				INFOPLIST_FILE = LIcaiWeex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.licaiweex2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2CC66771DCB728C006EF345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9A489FBB8C5698C953C07A /* Pods-LIcaiWeex.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D59CVQF6QM;
+				INFOPLIST_FILE = LIcaiWeex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.licaiweex2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2CC66591DCB728C006EF345 /* Build configuration list for PBXProject "LIcaiWeex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CC66731DCB728C006EF345 /* Debug */,
+				E2CC66741DCB728C006EF345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2CC66751DCB728C006EF345 /* Build configuration list for PBXNativeTarget "LIcaiWeex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CC66761DCB728C006EF345 /* Debug */,
+				E2CC66771DCB728C006EF345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2CC66561DCB728C006EF345 /* Project object */;
+}

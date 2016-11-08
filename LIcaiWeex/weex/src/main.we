@@ -1,0 +1,185 @@
+
+<!-- SymView.we -->
+<template>
+
+  <div style="width:750px;height:1206px;margin-top: 128px;">
+    <scroller>
+    <div style="width: 750px;height: 400px">
+      <slider auto-play="true"  style="height: 400px;width: 750px;" interval=1000>
+            <image repeat="{{banners}}" src="{{img}}" style="height: 400px;width: 750px"></image>
+
+
+        </slider>
+    </div>
+    <div style="height: 226.66px;width: 750px;flex-direction: row">
+      <div style="width: 187.5px;height: 226.66px;border-width: 0.33px;border-color: #dbdbdb;align-items: center;">
+        <image style="width: 80px;height: 80px;background-color: aqua;margin-top: 40px;" src="local://main"></image>
+        <text style="margin-top: 20px;font-size: 24px;color: black">基金理财</text>
+        <text style="margin-top: 10px;font-size: 20px;color: #999999">工薪族优选</text>
+      </div>
+
+      <div style="width: 187.5px;height: 226.66px;border-width: 0.33px;border-color: #dbdbdb;align-items: center;"onclick="back">
+        <image style="width: 80px;height: 80px;background-color: aqua;margin-top: 40px;" src="local://brand"></image>
+        <text style="margin-top: 20px;font-size: 24px;color: black">互联网金融</text>
+        <text style="margin-top: 10px;font-size: 20px;color: #999999">一站式理财</text>
+      </div>
+      <div style="width: 187.5px;height: 226.66px;border-width: 0.33px;border-color: #dbdbdb;align-items: center;"onclick="push">
+        <image style="width: 80px;height: 80px;background-color: aqua;margin-top: 40px;" src="local://shop"></image>
+        <text style="margin-top: 20px;font-size: 24px;color: black">理财保险</text>
+        <text style="margin-top: 10px;font-size: 20px;color: #999999">稳健理财</text>
+      </div>
+      <div style="width: 187.5px;height: 226.66px;border-width: 0.33px;border-color: #dbdbdb;align-items: center;">
+        <image style="width: 80px;height: 80px;background-color: aqua;margin-top: 40px;" src="local://my"></image>
+        <text style="margin-top: 20px;font-size: 24px;color: black">豆豆钱包</text>
+        <text style="margin-top: 10px;font-size: 20px;color: #999999">资产增值管家</text>
+      </div>
+    </div>
+    <div style="height: 226.66px;width: 750px;border-color: #dbdbdb;border-width: 0.33px">
+      <div style="height: 40px;width: 750px;margin-top: 20px;flex-direction: row;">
+        <image style="background-color: aqua;margin-left: 40px;margin-top: 10px;width: 20px;height: 20px;" ></image>
+        <text style="color: #ff6600;font-size: 34px;margin-left: 10px;flex: 2">储蓄宝</text>
+        <text style="color: #999;font-size: 20px;margin-right: 40px;margin-top: 10px;">我的储蓄我做主</text>
+      </div>
+      <div style="align-items: center;margin-top: 40px;">
+        <text style="color: #f60;font-size: 60px;">{{piggyValue}}</text>
+      </div>
+      <div style="align-items: center">
+        <text style="font-size: 20px;color: #999;margin-top: 10px;">七日年化收益率(%)</text>
+      </div>
+    </div>
+    <div style="width: 750px;height: 100px;flex-direction: row">
+      <text style="width: 200px;height:60px;margin-left:40px;margin-top: 30px;color: #f60"> 金融快讯</text>
+      <slider auto-play="true" interval=1000 style="height: 100px;width: 470px">
+        <div style="height: 100px;width: 470px;" repeat="{{news}}">
+          <text style="flex-direction: column-reverse;margin-top: 40px;font-size: 20px">{{newsText}}</text>
+        </div>
+      </slider>
+    </div>
+      <div style="width: 750px;height: 267px;background-color: #efefef">
+        <slider auto-play="true" style="width: 750px;height: 226px;margin-top: 20px;" interval=2000>
+
+          <image repeat="{{adNews}}" src="{{img}}" ></image>
+
+        </slider>
+      </div>
+    <SymView symtitle="ffffffffffffffffff" style="background-color: aqua;width:375px"></SymView>
+    </scroller>
+  </div>
+</template>
+
+<style>
+  .ct {
+    width: 750px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img {
+    margin-bottom: 20px;
+  }
+</style>
+
+<script>
+  module.exports = {
+    data: {
+      mainData:undefined,
+      list: [
+        {name: '123', price: 100},
+        {name: '345', price: 500},
+        {name: '567', price: 1.5},
+
+      ],
+      piggyValue:10,
+      adNews:[
+      ],
+      news:[],
+      banners:[
+      ],
+    }
+    ,
+    methods:{
+        push:function () {
+          var params = {
+            'url': 'local://SymView.js',
+            'animated' : 'true',
+          }
+//          this.$call("event", "openURL", params.url);
+          var event = require('@weex-module/event');
+          event.openURL(params.url);
+//          var navigator = require('@weex-module/navigator');
+//          navigator.push(params, function(e) {
+//            //callback
+//          });
+        },
+      back:function () {
+        var params = {
+          'url': 'SymView.we',
+          'animated' : 'true',
+        }
+        var navigator = require('@weex-module/navigator');
+        navigator.pop(params, function(e) {
+          //callback
+        });
+      },
+        loadData:function () {
+
+        }
+    } ,
+    created:function () {
+      console.log('dddddddd');
+      var stream = require('@weex-module/stream');
+      stream.fetch({
+        method: 'GET',
+        url: 'http://www.doodoabc.com/app_index',
+        headers:{
+          'app-ver':'ios_2.0.4'
+        },
+        type:'json',
+
+      }, function(retdata) {
+        this.mainData = retdata.data.data;
+        this.piggyValue = this.mainData.piggy.sumOfNav;
+        var banners = [];
+                for (var i = 0; i < this.mainData.app_index_slider.list.length; i++) {
+                    var slider = this.mainData.app_index_slider.list[i];
+                    banners.push({img:slider.adData.pic_url});
+
+                }
+        this.banners=banners;
+        var adNews = [];
+                for (var i = 0; i < this.mainData.app_index_banner_slider.list.length; i++) {
+                    var slider = this.mainData.app_index_banner_slider.list[i];
+                    adNews.push ({img:slider.adData.pic_url});
+                }
+        this.adNews = adNews;
+        var news = [];
+                for (var i = 0; i < this.mainData.thePage.length; i++) {
+                    var info = this.mainData.thePage[i];
+
+                    news.push ({newsText:info.title});
+                }
+        this.news = news;
+        var fundList = this.mainData.app_index_fund.list;
+        var list = [];
+        for (var  i=0;i<100;i++) {
+          var fund = fundList[i%fundList.length];
+          if (fund.prodData !== undefined){
+
+            list.push({name:fund.prodData.FUND_NAME,price:fund.prodData.YEAR_RATE1});
+          }
+        }
+        this.list = list;
+      }.bind(this),function(response){
+        console.log(response);
+        console.log('ffffffffff');
+      });
+
+
+
+
+
+
+
+    }
+  }
+</script>
