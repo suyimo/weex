@@ -36,7 +36,12 @@
 
 - (void)setFilePath:(NSString *)filePath {
     _filePath = [filePath copy];
+//    NSString *str = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:_filePath] encoding:NSUTF8StringEncoding error:NULL];
+//    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"/Documents/a.js"];
+//    [str writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+    
     jsUrl=[NSURL URLWithString:self.filePath];
+//    jsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@",path]];
 }
 
 //path:/Users/user/Library/Developer/CoreSimulator/Devices/5308F9A2-3D22-4B87-9203-DFCB449F5DF7/data/Containers/Bundle/Application/DBB5C299-086B-45C2-890F-E94F4136CD4D/LIcaiWeex.app/main.js
@@ -44,6 +49,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;

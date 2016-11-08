@@ -139,11 +139,6 @@
 
 	module.exports = {
 	  "type": "div",
-	  "style": {
-	    "width": 750,
-	    "height": 1206,
-	    "marginTop": 128
-	  },
 	  "children": [
 	    {
 	      "type": "scroller",
@@ -518,6 +513,7 @@
 	                    {
 	                      "type": "text",
 	                      "style": {
+	                        "flexDirection": "column",
 	                        "marginTop": 40,
 	                        "fontSize": 20
 	                      },

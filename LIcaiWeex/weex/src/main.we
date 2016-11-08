@@ -2,7 +2,7 @@
 <!-- SymView.we -->
 <template>
 
-  <div style="width:750px;height:1206px;margin-top: 128px;">
+  <div>
     <scroller>
     <div style="width: 750px;height: 400px">
       <slider auto-play="true"  style="height: 400px;width: 750px;" interval=1000>
@@ -51,7 +51,7 @@
       <text style="width: 200px;height:60px;margin-left:40px;margin-top: 30px;color: #f60"> 金融快讯</text>
       <slider auto-play="true" interval=1000 style="height: 100px;width: 470px">
         <div style="height: 100px;width: 470px;" repeat="{{news}}">
-          <text style="flex-direction: column-reverse;margin-top: 40px;font-size: 20px">{{newsText}}</text>
+          <text style="flex-direction: column;margin-top: 40px;font-size: 20px">{{newsText}}</text>
         </div>
       </slider>
     </div>
