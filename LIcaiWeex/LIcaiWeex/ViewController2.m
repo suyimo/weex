@@ -24,6 +24,7 @@
     NSString *path=[NSString stringWithFormat:@"file://%@/js/%@",[NSBundle mainBundle].bundlePath,@"main.js"];
     ViewController *vc=[[ViewController alloc]initWithJs:path];
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
