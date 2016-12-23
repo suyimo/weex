@@ -4,9 +4,14 @@
 
   <div>
     <scroller>
+      <refresh  class = "refresh-view" display="{{refresh_display}}" onrefresh="{{loadData}}">
+        <text if="{{(refresh_display==='hide')}}"> ↓ pull to refresh </text>
+        <loading-indicator class="indicator"></loading-indicator>
+      </refresh>
     <div style="width: 750px;height: 400px">
+
       <slider auto-play="true"  style="height: 400px;width: 750px;" interval=1000>
-            <image repeat="{{banners}}" src="{{img}}" style="height: 400px;width: 750px"></image>
+            <image repeat="{{banners}}" src="{{img}}" style="height: 400px;width: 750px;position: absolute;"></image>
 
 
         </slider>
@@ -77,12 +82,47 @@
   .img {
     margin-bottom: 20px;
   }
+  .indicator {
+    height: 40;
+    width: 40;
+    color:#45b5f0;
+  }
+
+  .refresh-arrow {
+    font-size: 30px;
+    color: #45b5f0;
+  }
+  .refresh-view {
+    width: 750;
+    height: 100;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    bottom: 1206px;
+  }
+  .loading-view {
+    width: 750;
+    height: 100;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
 </style>
 
 <script>
+//  require('weex-components');
   module.exports = {
     data: {
       mainData:undefined,
+      refresh_display:'hide',
       list: [
         {name: '123', price: 100},
         {name: '345', price: 500},
@@ -95,9 +135,14 @@
       news:[],
       banners:[
       ],
+
     }
     ,
     methods:{
+      refresh:function (e) {
+
+        this.loadData();
+      },
         push:function () {
           var params = {
             'url': 'local://SymView.js',
@@ -122,64 +167,60 @@
         });
       },
         loadData:function () {
+        this.refresh_display = 'show';
+          var stream = require('@weex-module/stream');
+          stream.fetch({
+            method: 'GET',
+            url: 'http://www.doodoabc.com/app_index',
+            headers:{
+              'app-ver':'ios_2.0.4'
+            },
 
+            type:'json',
+
+          }, function(retdata) {
+            this.refresh_display = 'hide';
+            this.mainData = retdata.data.data;
+            this.piggyValue = this.mainData.piggy.sumOfNav;
+            var banners = [];
+            this.banners=[];
+            for (var i = 0; i < this.mainData.app_index_slider.list.length; i++) {
+              var slider = this.mainData.app_index_slider.list[i];
+              banners.push({img:slider.adData.pic_url});
+            }
+//            this.banners=banners;
+            var adNews = [];
+            for (var i = 0; i < this.mainData.app_index_banner_slider.list.length; i++) {
+              var slider = this.mainData.app_index_banner_slider.list[i];
+              adNews.push ({img:slider.adData.pic_url});
+            }
+            this.adNews = adNews;
+            var news = [];
+            for (var i = 0; i < this.mainData.thePage.length; i++) {
+              var info = this.mainData.thePage[i];
+
+              news.push ({newsText:info.title});
+            }
+            this.news = news;
+            var fundList = this.mainData.app_index_fund.list;
+            var list = [];
+            for (var  i=0;i<100;i++) {
+              var fund = fundList[i%fundList.length];
+              if (fund.prodData !== undefined){
+
+                list.push({name:fund.prodData.FUND_NAME,price:fund.prodData.YEAR_RATE1});
+              }
+            }
+            this.list = list;
+          }.bind(this),function(response){
+            console.log(response);
+            console.log('ffffffffff');
+          });
         }
     } ,
     created:function () {
       console.log('dddddddd');
-      var stream = require('@weex-module/stream');
-      stream.fetch({
-        method: 'GET',
-        url: 'http://www.doodoabc.com/app_index',
-        headers:{
-          'app-ver':'ios_2.0.4'
-        },
-        type:'json',
-
-      }, function(retdata) {
-        this.mainData = retdata.data.data;
-        this.piggyValue = this.mainData.piggy.sumOfNav;
-        var banners = [];
-                for (var i = 0; i < this.mainData.app_index_slider.list.length; i++) {
-                    var slider = this.mainData.app_index_slider.list[i];
-                    banners.push({img:slider.adData.pic_url});
-
-                }
-        this.banners=banners;
-        var adNews = [];
-                for (var i = 0; i < this.mainData.app_index_banner_slider.list.length; i++) {
-                    var slider = this.mainData.app_index_banner_slider.list[i];
-                    adNews.push ({img:slider.adData.pic_url});
-                }
-        this.adNews = adNews;
-        var news = [];
-                for (var i = 0; i < this.mainData.thePage.length; i++) {
-                    var info = this.mainData.thePage[i];
-
-                    news.push ({newsText:info.title});
-                }
-        this.news = news;
-        var fundList = this.mainData.app_index_fund.list;
-        var list = [];
-        for (var  i=0;i<100;i++) {
-          var fund = fundList[i%fundList.length];
-          if (fund.prodData !== undefined){
-
-            list.push({name:fund.prodData.FUND_NAME,price:fund.prodData.YEAR_RATE1});
-          }
-        }
-        this.list = list;
-      }.bind(this),function(response){
-        console.log(response);
-        console.log('ffffffffff');
-      });
-
-
-
-
-
-
-
+//      this.methods.loadData();
     }
   }
 </script>

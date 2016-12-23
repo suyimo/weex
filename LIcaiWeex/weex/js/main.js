@@ -144,6 +144,33 @@
 	      "type": "scroller",
 	      "children": [
 	        {
+	          "type": "refresh",
+	          "classList": [
+	            "refresh-view"
+	          ],
+	          "attr": {
+	            "display": function () {return this.refresh_display}
+	          },
+	          "events": {
+	            "refresh": "loadData"
+	          },
+	          "children": [
+	            {
+	              "type": "text",
+	              "shown": function () {return (this.refresh_display==='hide')},
+	              "attr": {
+	                "value": "↓ pull to refresh"
+	              }
+	            },
+	            {
+	              "type": "loading-indicator",
+	              "classList": [
+	                "indicator"
+	              ]
+	            }
+	          ]
+	        },
+	        {
 	          "type": "div",
 	          "style": {
 	            "width": 750,
@@ -169,7 +196,8 @@
 	                  },
 	                  "style": {
 	                    "height": 400,
-	                    "width": 750
+	                    "width": 750,
+	                    "position": "absolute"
 	                  }
 	                }
 	              ]
@@ -585,6 +613,34 @@
 	  },
 	  "img": {
 	    "marginBottom": 20
+	  },
+	  "indicator": {
+	    "height": 40,
+	    "width": 40,
+	    "color": "#45b5f0"
+	  },
+	  "refresh-arrow": {
+	    "fontSize": 30,
+	    "color": "#45b5f0"
+	  },
+	  "refresh-view": {
+	    "width": 750,
+	    "height": 100,
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center",
+	    "bottom": 1206
+	  },
+	  "loading-view": {
+	    "width": 750,
+	    "height": 100,
+	    "display": "flex",
+	    "MsFlexAlign": "center",
+	    "WebkitAlignItems": "center",
+	    "WebkitBoxAlign": "center",
+	    "alignItems": "center"
 	  }
 	}
 
@@ -597,14 +653,20 @@
 	module.exports = {
 	  data: function () {return {
 	    mainData: undefined,
+	    refresh_display: 'hide',
 	    list: [{ name: '123', price: 100 }, { name: '345', price: 500 }, { name: '567', price: 1.5 }],
 	    piggyValue: 10,
 	    adNews: [],
 	    news: [],
 	    banners: []
+
 	  }},
 
 	  methods: {
+	    refresh: function refresh(e) {
+
+	      this.loadData();
+	    },
 	    push: function push() {
 	      var params = {
 	        'url': 'local://SymView.js',
@@ -622,55 +684,60 @@
 	      var navigator = __weex_require__('@weex-module/navigator');
 	      navigator.pop(params, function (e) {});
 	    },
-	    loadData: function loadData() {}
+	    loadData: function loadData() {
+	      this.refresh_display = 'show';
+	      var stream = __weex_require__('@weex-module/stream');
+	      stream.fetch({
+	        method: 'GET',
+	        url: 'http://www.doodoabc.com/app_index',
+	        headers: {
+	          'app-ver': 'ios_2.0.4'
+	        },
+
+	        type: 'json'
+
+	      }, function (retdata) {
+	        this.refresh_display = 'hide';
+	        this.mainData = retdata.data.data;
+	        this.piggyValue = this.mainData.piggy.sumOfNav;
+	        var banners = [];
+	        this.banners = [];
+	        for (var i = 0; i < this.mainData.app_index_slider.list.length; i++) {
+	          var slider = this.mainData.app_index_slider.list[i];
+	          banners.push({ img: slider.adData.pic_url });
+	        }
+
+	        var adNews = [];
+	        for (var i = 0; i < this.mainData.app_index_banner_slider.list.length; i++) {
+	          var slider = this.mainData.app_index_banner_slider.list[i];
+	          adNews.push({ img: slider.adData.pic_url });
+	        }
+	        this.adNews = adNews;
+	        var news = [];
+	        for (var i = 0; i < this.mainData.thePage.length; i++) {
+	          var info = this.mainData.thePage[i];
+
+	          news.push({ newsText: info.title });
+	        }
+	        this.news = news;
+	        var fundList = this.mainData.app_index_fund.list;
+	        var list = [];
+	        for (var i = 0; i < 100; i++) {
+	          var fund = fundList[i % fundList.length];
+	          if (fund.prodData !== undefined) {
+
+	            list.push({ name: fund.prodData.FUND_NAME, price: fund.prodData.YEAR_RATE1 });
+	          }
+	        }
+	        this.list = list;
+	      }.bind(this), function (response) {
+	        console.log(response);
+	        console.log('ffffffffff');
+	      });
+	    }
 	  },
 	  created: function created() {
 	    console.log('dddddddd');
-	    var stream = __weex_require__('@weex-module/stream');
-	    stream.fetch({
-	      method: 'GET',
-	      url: 'http://www.doodoabc.com/app_index',
-	      headers: {
-	        'app-ver': 'ios_2.0.4'
-	      },
-	      type: 'json'
-
-	    }, function (retdata) {
-	      this.mainData = retdata.data.data;
-	      this.piggyValue = this.mainData.piggy.sumOfNav;
-	      var banners = [];
-	      for (var i = 0; i < this.mainData.app_index_slider.list.length; i++) {
-	        var slider = this.mainData.app_index_slider.list[i];
-	        banners.push({ img: slider.adData.pic_url });
-	      }
-	      this.banners = banners;
-	      var adNews = [];
-	      for (var i = 0; i < this.mainData.app_index_banner_slider.list.length; i++) {
-	        var slider = this.mainData.app_index_banner_slider.list[i];
-	        adNews.push({ img: slider.adData.pic_url });
-	      }
-	      this.adNews = adNews;
-	      var news = [];
-	      for (var i = 0; i < this.mainData.thePage.length; i++) {
-	        var info = this.mainData.thePage[i];
-
-	        news.push({ newsText: info.title });
-	      }
-	      this.news = news;
-	      var fundList = this.mainData.app_index_fund.list;
-	      var list = [];
-	      for (var i = 0; i < 100; i++) {
-	        var fund = fundList[i % fundList.length];
-	        if (fund.prodData !== undefined) {
-
-	          list.push({ name: fund.prodData.FUND_NAME, price: fund.prodData.YEAR_RATE1 });
-	        }
-	      }
-	      this.list = list;
-	    }.bind(this), function (response) {
-	      console.log(response);
-	      console.log('ffffffffff');
-	    });
 	  }
 	};}
 	/* generated by weex-loader */
